@@ -1,0 +1,39 @@
+import math
+from math import pi
+ 
+def V_prostpadłościan():
+    a = float(input("podaj a: "))
+    h = float(input('podaj h: '))
+    print('objętość prostopadłościanu', a**2*h, 'jednostek sześciennych')
+    return a**2*h
+def V_kuli():
+    r = float(input('podaj r: '))
+    print('Objętość kuli to',4/3*pi*r**2, 'jednostek sześciennych' )
+    return 4/3*pi*r**2
+def V_stożka():
+    r = float(input('podaj r: '))
+    h = float(input('podaj h: '))
+    print('Objętośc stożka to',1/3*pi*r**2*h,'jednostek sześciennych'  )
+    return 1/3*pi*r**2*h
+def V_walca():
+    r = float(input('podaj promień podstawy: '))
+    h = float(input('podaj wysokosc walca: '))
+    print('Objętość walca to',pi*r**2*h, 'jednostek sześciennych' )
+    return pi*r**2*h
+
+print('a - prostopadłościan     b - kula    c - stożek    d - walec    e - (Objętość kuli - Objętość walca)   f - (Objętość stożka*pole walca) g - (Objętość walca/Objętość kuli)   ')
+odp = input('co wybierasz: ')
+if odp == 'a':
+    V_prostpadłościan()
+elif odp == 'b':
+    V_kuli()
+elif odp == 'd':
+    V_walca()
+elif odp == 'e':
+    print('różnica objętości kuli i walca wynosi', V_kuli() - V_walca()),' jednostek sześciennych'
+elif odp == 'f':
+    print(f'Iloczyn objętości stożka i walca wynosi {V_stożka()*V_walca()} jednostek sześciennych')
+elif odp == 'g':
+    print(f'Iloczyn objętości stożka i walca wynosi {V_walca()/V_kuli()} jednostek sześciennych')
+else:
+    V_stożka()
